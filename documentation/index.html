@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookOS — Documentation</title>
+  <meta name="description" content="BookOS documentation: getting started, the editor, the Book Brain, AI agents and providers, version control, and advanced configuration.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239a4a1e' stroke-width='1.6'%3E%3Cpath d='M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15.5H6.5A2.5 2.5 0 0 0 4 21V5.5Z'/%3E%3Cpath d='M4 18.5A2.5 2.5 0 0 1 6.5 16H20'/%3E%3C/svg%3E">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="docs-layout wrap">
+    <nav class="docs-nav" id="docs-nav" aria-label="Documentation"></nav>
+
+    <article class="docs-article">
+      <h1>Documentation</h1>
+      <div class="doc-meta">Everything BookOS does, and why.</div>
+
+      <div class="search-box" style="margin:26px 0 8px">
+        <input type="search" data-doc-search placeholder="Search the documentation…  (press / to focus)" aria-label="Search the documentation">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      </div>
+      <div id="search-results" class="search-results" role="region" aria-live="polite"></div>
+
+      <div class="doc-cards">
+        <a class="doc-card" href="getting-started.html">
+          <div class="cat">Getting Started</div>
+          <div class="t">From installer to first chapter</div>
+          <div class="d">Installation, your first project, creating a book, and writing chapter one.</div>
+        </a>
+        <a class="doc-card" href="writing.html">
+          <div class="cat">Writing</div>
+          <div class="t">The editor, scenes, notes &amp; goals</div>
+          <div class="d">The surfaces you live in daily — track changes, scene targeting, the scratchpad.</div>
+        </a>
+        <a class="doc-card" href="book-brain.html">
+          <div class="cat">Book Brain</div>
+          <div class="t">Context, characters, continuity</div>
+          <div class="d">The memory of your book: canon, states, knowledge, timeline, worldbuilding.</div>
+        </a>
+        <a class="doc-card" href="ai.html">
+          <div class="cat">AI</div>
+          <div class="t">Agents, Autopilot &amp; providers</div>
+          <div class="d">How the agents work, how Autopilot is controlled, and bringing your own keys.</div>
+        </a>
+        <a class="doc-card" href="version-control.html">
+          <div class="cat">Version Control</div>
+          <div class="t">Branches, PRs &amp; merging</div>
+          <div class="d">Every draft kept: alternate versions, change proposals, reviewable merges.</div>
+        </a>
+        <a class="doc-card" href="advanced.html">
+          <div class="cat">Advanced</div>
+          <div class="t">Skills, local models, export</div>
+          <div class="d">Imported craft, project configuration, offline AI, and getting work out.</div>
+        </a>
+      </div>
+    </article>
+
+    <aside class="docs-toc"></aside>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <script>window.SITE_ROOT = '../'</script>
+  <script src="../config.js"></script>
+  <script src="../docs-data.js"></script>
+  <script src="../components.js"></script>
+</body>
+</html>
