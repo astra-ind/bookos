@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookOS — Changelog</title>
+  <meta name="description" content="What shipped in each BookOS release.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239a4a1e' stroke-width='1.6'%3E%3Cpath d='M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15.5H6.5A2.5 2.5 0 0 0 4 21V5.5Z'/%3E%3Cpath d='M4 18.5A2.5 2.5 0 0 1 6.5 16H20'/%3E%3C/svg%3E">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="prose-page" style="max-width:760px">
+    <h1>Changelog</h1>
+    <p class="updated">Major releases. Everything ships with an offline smoke suite of 42 end-to-end checks.</p>
+
+    <div class="cl-entry">
+      <span class="cl-ver">3.5.0</span><span class="cl-date">September 2026</span>
+      <ul>
+        <li><span class="cl-tag fixed">Fixed</span>Replaced every native prompt dialog with real in-app dialogs — a dozen controls that could fail at runtime now work everywhere.</li>
+        <li><span class="cl-tag added">Added</span>AI task extraction surfaced in the Finish Line; research dependency tracing in the Research Lab.</li>
+        <li><span class="cl-tag fixed">Fixed</span>Autonomy setting labels now match the behavior the dial actually enforces.</li>
+      </ul>
+    </div>
+
+    <div class="cl-entry">
+      <span class="cl-ver">3.3.0</span><span class="cl-date">September 2026</span>
+      <ul>
+        <li><span class="cl-tag added">Added</span>The autonomy dial is enforced: Manual suppresses ambient AI, Collaborative surfaces agent findings, Supervised queues every job for approval with a banner, Full runs unattended.</li>
+        <li><span class="cl-tag added">Added</span>Selection-menu agent actions — Branch (alternate version on a draft branch) and Check (continuity agent on the passage).</li>
+        <li><span class="cl-tag added">Added</span>Proactive continuity nudges while writing; the Book Graph (causality view over mysteries, clues, setups, payoffs, relationships).</li>
+        <li><span class="cl-tag added">Added</span>TODO extraction from prose into the task board; research claim tracing to dependent scenes.</li>
+        <li><span class="cl-tag added">Added</span>Review-to-review diffing; ambient-agent status on Book Health; appearance timeline in the Context Lens.</li>
+      </ul>
+    </div>
+
+    <div class="cl-entry">
+      <span class="cl-ver">3.2.0</span><span class="cl-date">September 2026</span>
+      <ul>
+        <li><span class="cl-tag added">Added</span>Context Lens — select a character, location or thread name in the prose and the Book Brain opens beside the words: current state, knowledge, secrets, relationships, appearances, private notes.</li>
+        <li><span class="cl-tag added">Added</span>Scene context block in the editor's Chapter Context panel.</li>
+      </ul>
+    </div>
+
+    <div class="cl-entry">
+      <span class="cl-ver">3.1.0</span><span class="cl-date">September 2026</span>
+      <ul>
+        <li><span class="cl-tag added">Added</span>Ambient canon extraction: after you write, the Brain proposes what the prose established — one-click ratify or discard.</li>
+        <li><span class="cl-tag added">Added</span>Review Workbench: five diagnostics in one run, persisted with verdicts and history.</li>
+        <li><span class="cl-tag fixed">Fixed</span>Word-level diff summary and keyboard accept/reject on inline AI previews; stale previews discarded on buffer switches.</li>
+      </ul>
+    </div>
+
+    <div class="cl-entry">
+      <span class="cl-ver">3.0.0</span><span class="cl-date">September 2026</span>
+      <ul>
+        <li><span class="cl-tag added">Added</span>Ambient continuity sync — the Brain maintains itself in the background, folding ⚠ flags into the navigator.</li>
+        <li><span class="cl-tag added">Added</span>Cursor-level diff preview for AI edits; cross-chapter scene moves with consequence review; keyboard-complete navigator.</li>
+        <li><span class="cl-tag added">Added</span>Custom assisted installer with INKOS-branded wizard.</li>
+      </ul>
+    </div>
+
+    <div class="cl-entry" style="border-left-color:transparent">
+      <span class="cl-ver">1.0 → 2.1</span><span class="cl-date">2026</span>
+      <ul>
+        <li>BookGit (commits, branches, AI change proposals, contribution analytics) · agent runtime with 14 specialists · Word-grade editor shell (ribbon, citations, style lint, footnotes, bookmarks) · projects and universes with inherited canon · skill loader for your own craft documents · the manuscript navigator spine · files-first architecture with external-edit round-trip.</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <script src="config.js"></script>
+  <script src="docs-data.js"></script>
+  <script src="components.js"></script>
+</body>
+</html>

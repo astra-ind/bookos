@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookOS — Help Center</title>
+  <meta name="description" content="BookOS Help Center: installation, projects, the Book Brain, AI agents, offline use, version recovery, exports, and how to reach support.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239a4a1e' stroke-width='1.6'%3E%3Cpath d='M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15.5H6.5A2.5 2.5 0 0 0 4 21V5.5Z'/%3E%3Cpath d='M4 18.5A2.5 2.5 0 0 1 6.5 16H20'/%3E%3C/svg%3E">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main>
+    <section class="hero" style="padding-bottom:0">
+      <div class="wrap">
+        <p class="kicker">Help Center</p>
+        <h1 class="h1" style="text-align:center;margin:0 auto">Search BookOS Help</h1>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:36px">
+      <div class="wrap narrow">
+        <div class="search-box" style="margin:0 auto">
+          <input type="search" data-doc-search placeholder="Search the documentation…  (press / to focus)" aria-label="Search BookOS help and documentation">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        </div>
+        <div id="search-results" class="search-results" role="region" aria-live="polite"></div>
+
+        <h2 class="h3" style="margin-top:64px">Common questions</h2>
+        <div class="faq" style="margin-top:20px;max-width:none">
+          <details class="faq-item"><summary>How do I install BookOS?<span class="ind" aria-hidden="true"></span></summary><div class="faq-body">Download the Windows installer from the <a href="download.html">Download page</a> and run it — the wizard covers install location and shortcuts. Your books are not stored in the install directory; they live in <code>.bookos</code> project folders you choose, so reinstalling or uninstalling never touches your writing. Full steps: <a href="documentation/installation.html">Installation →</a></div></details>
+          <details class="faq-item"><summary>How do I create a project?<span class="ind" aria-hidden="true"></span></summary><div class="faq-body">Launch BookOS and choose <strong>New Project</strong> on the home screen. Pick a kind — Book, Series, Universe, or Nonfiction — give it a name, and you're in. A project can hold one book or an entire universe. Details: <a href="documentation/first-project.html">Creating your first project →</a></div></details>
+          <details class="faq-item"><summary>How do I import a manuscript?<span class="ind" aria-hidden="true"></span></summary><div class="faq-body">Inside a book, run <strong>Import</strong> (File menu) and choose a DOCX, TXT, Markdown, HTML, or EPUB file. Chapters are extracted and you're offered an analysis pass that proposes characters, locations, mysteries and a chapter map — each proposal reviewed before anything enters the Book Brain. Nothing is committed automatically.</div></details>
+          <details class="faq-item"><summary>How does the Book Brain work?<span class="ind" aria-hidden="true"></span></summary><div class="faq-body">The Book Brain is a persistent model of your story held in the project's local database: canon records, live character states, who knows what, timeline, mysteries, setups and payoffs, research and your notes. It updates in two ways: automatically through ambient extraction that proposes what new prose established (you ratify), and manually through the boards. Every AI operation reads a surgical packet from it. See <a href="documentation/context.html">What the Book Brain knows →</a></div></details>
+          <details class="faq-item"><summary>How do AI agents work?<span class="ind" aria-hidden="true"></span></summary><div class="faq-body">Agents are specialists with declared permissions — the Critic cannot write prose, the Writer cannot touch canon. You invoke them through selection actions, workflows, or Autopilot; their output arrives as reviewable changes on the manuscript or as proposals, never as silent edits. Every run is logged and inspectable. See <a href="documentation/agents.html">AI agents →</a></div></details>
+          <details class="faq-item"><summary>Can I use my own API key?<span class="ind" aria-hidden="true"></span></summary><div class="faq-body">Yes — that's the design. Settings → AI Providers accepts OpenAI, Anthropic, Google, any OpenAI-compatible endpoint, and local models. Keys are stored in your operating system's credential vault, never in project files or backups. See <a href="documentation/providers.html">AI providers &amp; API keys →</a></div></details>
+          <details class="faq-item"><summary>Does BookOS work offline?<span class="ind" aria-hidden="true"></span></summary><div class="faq-body">Completely. Writing, planning, continuity audits, search, exports, and backups are all local. A built-in offline embedder powers semantic search with no provider at all. Only AI generation calls out to the network — through providers you configured — and the app degrades loudly and honestly if that's unavailable.</div></details>
+          <details class="faq-item"><summary>How do I restore an older version?<span class="ind" aria-hidden="true"></span></summary><div class="faq-body">Three ways. Chapter version history offers side-by-side diff and restore. BookGit snapshots are taken automatically before merges and risky operations — find them in Version Control. And one-click backups are restorable gzip archives of the whole project. Your own copy of the <code>.bookos</code> folder is always a backup too.</div></details>
+          <details class="faq-item"><summary>How do I export my book?<span class="ind" aria-hidden="true"></span></summary><div class="faq-body">Export supports DOCX (professional presets, real Word TOC field, headers/footers, auto-bibliography from citations), PDF, EPUB, Markdown, HTML, and TXT. Everything is composed from the canonical manuscript at export time — nothing destructive, nothing baked into your text. See <a href="documentation/export.html">Export &amp; backup →</a></div></details>
+          <details class="faq-item"><summary>How do I report a bug?<span class="ind" aria-hidden="true"></span></summary><div class="faq-body">Email <a href="mailto:support@bookos.app?subject=Bug%20report">support@bookos.app</a> with what you did, what you expected, and what happened. If it involves a crash or data concern, include the version from Settings → About. Project files themselves contain your writing — only attach them if you're comfortable doing so.</div></details>
+        </div>
+
+        <h2 class="h3" style="margin-top:64px">Reach a human</h2>
+        <div class="help-actions">
+          <a class="btn btn-primary" href="mailto:support@bookos.app">Contact Support</a>
+          <a class="btn btn-ghost" href="mailto:support@bookos.app?subject=Bug%20report">Report a Bug</a>
+          <a class="btn btn-ghost" href="mailto:support@bookos.app?subject=Feature%20request">Request a Feature</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <script src="config.js"></script>
+  <script src="docs-data.js"></script>
+  <script src="components.js"></script>
+</body>
+</html>

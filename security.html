@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookOS — Security</title>
+  <meta name="description" content="BookOS security posture: OS credential vault for keys, local-only data, no accounts, no telemetry, and a renderer sandboxed from the filesystem.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239a4a1e' stroke-width='1.6'%3E%3Cpath d='M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15.5H6.5A2.5 2.5 0 0 0 4 21V5.5Z'/%3E%3Cpath d='M4 18.5A2.5 2.5 0 0 1 6.5 16H20'/%3E%3C/svg%3E">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="prose-page">
+    <h1>Security</h1>
+    <p class="updated">Last updated: September 2026</p>
+
+    <h2>Architecture</h2>
+    <p>BookOS is an Electron desktop application with a hard process boundary: the interface runs in a sandboxed renderer with <code>contextIsolation</code> enabled and Node integration disabled. All filesystem, database, and provider operations happen in the main process and are reached only through an explicit, enumerated bridge. The renderer never touches the disk directly.</p>
+
+    <h2>Credentials</h2>
+    <p>AI provider API keys are stored in the operating system's credential vault — Windows DPAPI, macOS Keychain, or libsecret. They are never written to the project database, never included in backups, never logged, and sent only to the provider they belong to. Masked values are shown in the interface; the smoke suite asserts that raw keys never persist to disk.</p>
+
+    <h2>Data at rest</h2>
+    <p>Books are plain folders on your disk — deliberately so. There is no server, no account database, and no cloud copy. Availability and confidentiality of your writing reduce to the security of your own machine and whatever backup arrangements you choose.</p>
+
+    <h2>Network</h2>
+    <p>The application makes no telemetry or analytics calls. Outbound requests occur only when you invoke AI features (to your configured providers) or check for updates, if enabled. Everything else — writing, search, continuity audits, semantic indexing, exports — runs locally.</p>
+
+    <h2>Reporting</h2>
+    <p>Found something? Email <a href="mailto:support@bookos.app?subject=Security">support@bookos.app</a> with details. During development we can't run a bounty program, but we will credit responsible disclosures in the changelog.</p>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <script src="config.js"></script>
+  <script src="docs-data.js"></script>
+  <script src="components.js"></script>
+</body>
+</html>

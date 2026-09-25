@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookOS — Privacy</title>
+  <meta name="description" content="BookOS privacy: your books are local folders, nothing is uploaded by the app, AI calls go only to providers you configure, and keys stay in your OS vault.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239a4a1e' stroke-width='1.6'%3E%3Cpath d='M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15.5H6.5A2.5 2.5 0 0 0 4 21V5.5Z'/%3E%3Cpath d='M4 18.5A2.5 2.5 0 0 1 6.5 16H20'/%3E%3C/svg%3E">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="prose-page">
+    <h1>Privacy</h1>
+    <p class="updated">Last updated: September 2026</p>
+
+    <h2>The short version</h2>
+    <p>Your books never leave your machine unless you send them somewhere. BookOS is a native desktop application with no accounts and no telemetry. What follows is the precise version.</p>
+
+    <h2>Where manuscripts are stored</h2>
+    <p>Every book lives in a <code>.bookos</code> folder you choose, on your disk: the full project as human-readable Markdown plus a local SQLite working database. The application reads and writes those folders and nothing else beyond its own settings and caches. Backups are archives of the same project data, stored locally, and never contain credentials.</p>
+
+    <h2>What is sent to AI providers</h2>
+    <p>BookOS does not include AI by default. If you configure a provider — OpenAI, Anthropic, Google, a compatible endpoint, or a local model — then the AI features you invoke send a task-specific context packet (for example: your constitution, relevant canon, the chapter being worked on) to that provider, exactly as when you use that provider anywhere else. The destination is your account at your provider, under their terms and privacy policy. No provider is configured, no data leaves. A built-in offline embedder powers semantic search locally.</p>
+
+    <h2>How API keys are handled</h2>
+    <p>Keys are stored in your operating system's credential vault (Windows DPAPI, macOS Keychain, or libsecret on Linux). They are never written to project files, never stored in the application database, never included in backups, and never transmitted anywhere except to the provider you attached them to.</p>
+
+    <h2>Account data</h2>
+    <p>There are no accounts. The application keeps a local library registry so the home screen can list your books; it contains paths and timestamps, stays on your machine, and can be cleared with the app.</p>
+
+    <h2>Backups and uninstall</h2>
+    <p>Backups contain your project, never your keys. Uninstalling the application does not delete your book folders — your writing is independent of the software by design.</p>
+
+    <h2>Questions</h2>
+    <p>Write to <a href="mailto:support@bookos.app">support@bookos.app</a>. See also <a href="security.html">Security</a> and <a href="terms.html">Terms</a>.</p>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <script src="config.js"></script>
+  <script src="docs-data.js"></script>
+  <script src="components.js"></script>
+</body>
+</html>
